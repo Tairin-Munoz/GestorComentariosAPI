@@ -1,0 +1,6 @@
+@GestorComentariosAPI2_HostAddress = http://localhost:5244
+
+GET {{GestorComentariosAPI2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
