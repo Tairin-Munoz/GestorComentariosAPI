@@ -1,0 +1,7 @@
+C:\Users\Rodrigo\Desktop\TAREAS UCB\9no_Semestre\Tecnologia Web 1\Tarea_1_Api_Comentarios_Muñoz\GestorComentariosAPI2\GestorComentariosAPI2\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Rodrigo\Desktop\TAREAS UCB\9no_Semestre\Tecnologia Web 1\Tarea_1_Api_Comentarios_Muñoz\GestorComentariosAPI2\GestorComentariosAPI2\obj\Debug\net10.0\GestorComentariosAPI2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rodrigo\Desktop\TAREAS UCB\9no_Semestre\Tecnologia Web 1\Tarea_1_Api_Comentarios_Muñoz\GestorComentariosAPI2\GestorComentariosAPI2\obj\Debug\net10.0\GestorComentariosAPI2.AssemblyInfoInputs.cache
+C:\Users\Rodrigo\Desktop\TAREAS UCB\9no_Semestre\Tecnologia Web 1\Tarea_1_Api_Comentarios_Muñoz\GestorComentariosAPI2\GestorComentariosAPI2\obj\Debug\net10.0\GestorComentariosAPI2.AssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\TAREAS UCB\9no_Semestre\Tecnologia Web 1\Tarea_1_Api_Comentarios_Muñoz\GestorComentariosAPI2\GestorComentariosAPI2\obj\Debug\net10.0\GestorComentariosAPI2.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\Desktop\TAREAS UCB\9no_Semestre\Tecnologia Web 1\Tarea_1_Api_Comentarios_Muñoz\GestorComentariosAPI2\GestorComentariosAPI2\obj\Debug\net10.0\GestorComentariosAPI2.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Rodrigo\Desktop\TAREAS UCB\9no_Semestre\Tecnologia Web 1\Tarea_1_Api_Comentarios_Muñoz\GestorComentariosAPI2\GestorComentariosAPI2\obj\Debug\net10.0\GestorComentariosAPI2.sourcelink.json

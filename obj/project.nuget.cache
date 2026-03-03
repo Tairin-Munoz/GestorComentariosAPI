@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "mgeBbIQ3FUE=",
+  "dgSpecHash": "Pj6mDmDH+uA=",
   "success": true,
   "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\TAREAS UCB\\9no_Semestre\\Tecnologia Web 1\\Tarea_1_Api_Comentarios_Muñoz\\GestorComentariosAPI2\\GestorComentariosAPI2\\GestorComentariosAPI2.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.10\\microsoft.aspnetcore.openapi.9.0.10.nupkg.sha512",
-    "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+    "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.13\\microsoft.windowsdesktop.app.ref.9.0.13.nupkg.sha512",
+    "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.13\\microsoft.netcore.app.ref.9.0.13.nupkg.sha512",
+    "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.13\\microsoft.aspnetcore.app.ref.9.0.13.nupkg.sha512",
+    "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.13\\microsoft.netcore.app.host.win-x64.9.0.13.nupkg.sha512"
   ],
   "logs": []
 }

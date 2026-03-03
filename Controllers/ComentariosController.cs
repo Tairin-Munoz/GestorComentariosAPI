@@ -1,15 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using GestorComentariosAPI.Models;
+﻿using GestorComentariosAPI.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 
-namespace GestorComentariosAPI.Controllers
+namespace GestorComentariosAPI2.Controllers
 {
     [ApiController]
     [Route("api/comentarios")]
     public class ComentariosController : ControllerBase
     {
         private readonly HttpClient _httpClient;
+        private readonly JsonSerializerOptions _jsonOptions;
 
         public ComentariosController()
         {
@@ -17,8 +18,12 @@ namespace GestorComentariosAPI.Controllers
             {
                 BaseAddress = new Uri("https://jsonplaceholder.typicode.com/")
             };
-        }
 
+            _jsonOptions = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+        }
 
         [HttpGet("post/{postId}")]
         public async Task<IActionResult> GetComentariosPorPost(int postId)
@@ -31,10 +36,11 @@ namespace GestorComentariosAPI.Controllers
                 return StatusCode((int)response.StatusCode);
 
             var json = await response.Content.ReadAsStringAsync();
-            var comentarios = JsonSerializer.Deserialize<List<Comentario>>(json) ?? new List<Comentario>();
+            var comentarios = JsonSerializer.Deserialize<List<Comentario>>(json, _jsonOptions)
+                              ?? new List<Comentario>();
 
             if (!comentarios.Any())
-                return NotFound("Este post no tiene comentarios. Puede agregar uno.");
+                return NotFound("Este post no tiene comentarios.");
 
             var resultado = comentarios.Select(c => new
             {
@@ -57,7 +63,6 @@ namespace GestorComentariosAPI.Controllers
             });
         }
 
-
         [HttpGet("email")]
         public async Task<IActionResult> BuscarPorDominio([FromQuery] string dominio)
         {
@@ -69,7 +74,8 @@ namespace GestorComentariosAPI.Controllers
                 return StatusCode((int)response.StatusCode);
 
             var json = await response.Content.ReadAsStringAsync();
-            var comentarios = JsonSerializer.Deserialize<List<Comentario>>(json) ?? new List<Comentario>();
+            var comentarios = JsonSerializer.Deserialize<List<Comentario>>(json, _jsonOptions)
+                              ?? new List<Comentario>();
 
             var filtrados = comentarios
                 .Where(c => !string.IsNullOrEmpty(c.Email) &&
@@ -77,7 +83,6 @@ namespace GestorComentariosAPI.Controllers
                 .ToList();
 
             var distribucion = filtrados
-                .Where(c => !string.IsNullOrEmpty(c.Email))
                 .GroupBy(c => c.Email!.Substring(c.Email.IndexOf("@")))
                 .ToDictionary(g => g.Key, g => g.Count());
 
@@ -100,7 +105,6 @@ namespace GestorComentariosAPI.Controllers
             });
         }
 
-
         [HttpGet("post/{postId}/analisis")]
         public async Task<IActionResult> Analisis(int postId)
         {
@@ -112,7 +116,8 @@ namespace GestorComentariosAPI.Controllers
                 return StatusCode((int)response.StatusCode);
 
             var json = await response.Content.ReadAsStringAsync();
-            var comentarios = JsonSerializer.Deserialize<List<Comentario>>(json) ?? new List<Comentario>();
+            var comentarios = JsonSerializer.Deserialize<List<Comentario>>(json, _jsonOptions)
+                              ?? new List<Comentario>();
 
             if (!comentarios.Any())
                 return NotFound("Este post no tiene comentarios.");
@@ -156,9 +161,13 @@ namespace GestorComentariosAPI.Controllers
                 })
                 .FirstOrDefault();
 
-            double promedioLongitud = comentarios
+            var comentariosConTexto = comentarios
                 .Where(c => !string.IsNullOrEmpty(c.Body))
-                .Average(c => c.Body!.Length);
+                .ToList();
+
+            double promedioLongitud = comentariosConTexto.Any()
+                ? comentariosConTexto.Average(c => c.Body!.Length)
+                : 0;
 
             return Ok(new
             {
@@ -178,7 +187,6 @@ namespace GestorComentariosAPI.Controllers
             });
         }
 
-
         [HttpGet("aleatorio")]
         public async Task<IActionResult> ComentarioAleatorio()
         {
@@ -194,7 +202,7 @@ namespace GestorComentariosAPI.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     var json = await response.Content.ReadAsStringAsync();
-                    comentario = JsonSerializer.Deserialize<Comentario>(json);
+                    comentario = JsonSerializer.Deserialize<Comentario>(json, _jsonOptions);
                 }
 
                 intentos++;

@@ -1,0 +1,60 @@
+[
+  {
+    "ContainingType": "GestorComentariosAPI2.Controllers.ComentariosController",
+    "Method": "ComentarioAleatorio",
+    "RelativePath": "api/comentarios/aleatorio",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorComentariosAPI2.Controllers.ComentariosController",
+    "Method": "BuscarPorDominio",
+    "RelativePath": "api/comentarios/email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dominio",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorComentariosAPI2.Controllers.ComentariosController",
+    "Method": "GetComentariosPorPost",
+    "RelativePath": "api/comentarios/post/{postId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestorComentariosAPI2.Controllers.ComentariosController",
+    "Method": "Analisis",
+    "RelativePath": "api/comentarios/post/{postId}/analisis",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
